@@ -12,9 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Nunito" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 
-    <meta charset="utf-8">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
-
+    <meta charset="utf-8"/>
     <title>Petbox</title>
 
 </head>
@@ -197,14 +195,8 @@
                             //Verifica a se a extensão do arquivo é pdf
                             $tmp = explode('.',$row['imagem']);
                             $extensao = strtolower(end($tmp));
-                            if(!isset($row['imagem'])){
-                              echo '<tr><td>'. $row['agente'] .'</td>
-                              <td>'. $row['tipo'] .'</td>
-                              <td>R$ '. $row['valor'] .'</td>
-                              <td>'. $origem .'</td>
-                              <td>'. $destino .'</td>
-                              <td>'. $row['dataAcao'] .'</td></tr>';
-                            }else if($extensao == 'pdf'){
+                            if( $extensao == 'pdf'){
+                              
                               //Mostra a tela de comprovante
                               $func1 = "document.getElementById('comprovanteDiv').style.display='block'";
                               //Pega o caminho para o arquivo à ser mostrado
@@ -226,7 +218,7 @@
                               <td>'. $destino .'</td>
                               <td>'. $row['dataAcao'] .'</td></tr>';
 
-                            }else if($extensao == 'png' || $extensao == 'jpg' || $extensao == 'jpeg'){
+                            }else{
                               //Mostra a tela de comprovante
                               $func1 = "document.getElementById('comprovanteDiv').style.display='block'";
                               //Pega o caminho para o arquivo à ser mostrado
