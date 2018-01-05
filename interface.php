@@ -12,7 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Nunito" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 
-    <meta charset="utf-8"/>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+
     <title>Petbox</title>
 
 </head>
