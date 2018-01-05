@@ -26,7 +26,9 @@ if(isset($_POST['submit']) && isset($_SESSION['u_id'])){
                     exit();
                 } elseif ($hashedPwdCheck == true) {
                     $sql = "UPDATE users SET user_pwd='$newhashedpwd' WHERE user_uid='$uid'";
-                        mysqli_query($conn, $sql);
+                    mysqli_query($conn, $sql);
+                    $mensagemLog = "O usuário ".$uid." mudou de senha";
+                    $sqlLogRegister = "INSERT INTO log(description) VALUES '$mensagemLog'";
                     header("Location: ../home.php?newpassword=sucess");
                     exit();
                 }

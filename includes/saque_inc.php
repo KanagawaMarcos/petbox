@@ -113,6 +113,17 @@ if(isset($_POST['submit']) AND isset($_SESSION['u_id'])){
                   $sqlInserirSaque = "INSERT INTO varys(tipo, valor, agente, origem, destino,justificativa) VALUES ('$tipo','$valor','$agente','$origem','$destino','$justificativa')";
                 }
                 mysqli_query($conn, $sqlInserirSaque);
+
+                //REGISTRO NO LOG
+                $mensagemLog = "Ação desconhecida";
+                if($saqueid == 1){
+                  $mensagemLog = "O agente ".$agente." fez um saque de ".$valor." na caixinha geral";
+                }
+                if($saqueid == 2){
+                  $mensagemLog = "O agente ".$agente." fez um saque de ".$valor." na caixinha da comida";
+                }
+                $sqlLogRegister = "INSERT INTO log(description) VALUES '$mensagemLog'";
+                //REGISTRO NO LOG
                 header("Location: ../home.php?saque=sucess");
                 exit();
             } else {

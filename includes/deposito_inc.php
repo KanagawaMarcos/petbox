@@ -69,6 +69,17 @@ if(isset($_POST['submit']) AND isset($_SESSION['u_id'])){
                       move_uploaded_file($fileTmpName, $fileDestination);
                       $sqlInserirDeposito = "INSERT INTO varys(tipo, valor, agente, origem, destino,imagem,justificativa) VALUES ('$tipo','$valor','$agente','$origem','$destino','$fileDestination','$justificativa')";
                       mysqli_query($conn, $sqlInserirDeposito);
+                      //REGISTRO NO LOG
+                      $mensagemLog = "Ação desconhecida";
+                      if($deposit == 1){
+                        $mensagemLog = "O agente ".$agente." fez um deposito de ".$valor." na caixinha geral";
+                      }
+                      if($deposit == 2){
+                        $mensagemLog = "O agente ".$agente." fez um deposito de ".$valor." na caixinha da comida";
+                      }
+                      $sqlLogRegister = "INSERT INTO log(description) VALUES '$mensagemLog'";
+                      mysqli_query($conn, $sqlLogRegister);
+                      //REGISTRO NO LOG
                       header("Location: ../home.php?deposit&upload=sucess");
                       exit();
                     }else{

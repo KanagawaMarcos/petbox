@@ -52,7 +52,14 @@ if(isset($_POST['submit']) AND isset($_SESSION['u_id'])){
                   $sqlDepositarUser = "UPDATE users SET user_saldo2=user_saldo2-'$valores[$key]' WHERE user_uid='$agentes[$key]'";
                   $mysqli->query( $sqlDepositarUser);
                 }
-
+                $mensagemLog = "Ação desconhecida";
+                if($deposit == 1){
+                  $mensagemLog = "O agente ".$agente." fez um deposito de ".$valor." na caixinha geral";
+                }
+                if($deposit == 2){
+                  $mensagemLog = "O agente ".$agente." fez um deposito de ".$valor." na caixinha da comida";
+                }
+                $sqlLogRegister = "INSERT INTO log(description) VALUES '$mensagemLog'";
               }
 
 
