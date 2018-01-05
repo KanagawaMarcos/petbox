@@ -96,7 +96,7 @@
 
                 <div>
                 <?php
-                if($_SESSION['u_permission'] == 3){
+              if($_SESSION['u_permission'] == 3){
                     echo'<button onclick="document.getElementById(\'cadastroForm\').style.display=\'block\'" class="botaoUsuarioInterface">Cadastrar Petiano</button>';
                 }
                 ?>
@@ -195,7 +195,14 @@
                             //Verifica a se a extensão do arquivo é pdf
                             $tmp = explode('.',$row['imagem']);
                             $extensao = strtolower(end($tmp));
-                            if( $extensao == 'pdf'){
+                            if(!isset($row['imagem'])){
+                              echo '<tr><td>'. $row['agente'] .'</td>
+                              <td>'. $row['tipo'] .'</td>
+                              <td>R$ '. $row['valor'] .'</td>
+                              <td>'. $origem .'</td>
+                              <td>'. $destino .'</td>
+                              <td>'. $row['dataAcao'] .'</td></tr>';
+                            }else if($extensao == 'pdf'){
                               //Mostra a tela de comprovante
                               $func1 = "document.getElementById('comprovanteDiv').style.display='block'";
                               //Pega o caminho para o arquivo à ser mostrado
@@ -217,7 +224,7 @@
                               <td>'. $destino .'</td>
                               <td>'. $row['dataAcao'] .'</td></tr>';
 
-                            }else{
+                            }else if($extensao == 'png' || $extensao == 'jpg' || $extensao == 'jpeg'){
                               //Mostra a tela de comprovante
                               $func1 = "document.getElementById('comprovanteDiv').style.display='block'";
                               //Pega o caminho para o arquivo à ser mostrado
