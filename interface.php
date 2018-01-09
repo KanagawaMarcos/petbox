@@ -12,9 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Nunito" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 
-    <meta charset="utf-8">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
-
+    <meta charset="utf-8"/>
     <title>Petbox</title>
 
 </head>
@@ -98,7 +96,7 @@
 
                 <div>
                 <?php
-                if($_SESSION['u_permission'] == 3){
+              if($_SESSION['u_permission'] == 3){
                     echo'<button onclick="document.getElementById(\'cadastroForm\').style.display=\'block\'" class="botaoUsuarioInterface">Cadastrar Petiano</button>';
                 }
                 ?>
@@ -198,6 +196,7 @@
                             $tmp = explode('.',$row['imagem']);
                             $extensao = strtolower(end($tmp));
                             if( $extensao == 'pdf'){
+                              
                               //Mostra a tela de comprovante
                               $func1 = "document.getElementById('comprovanteDiv').style.display='block'";
                               //Pega o caminho para o arquivo à ser mostrado
