@@ -1,3 +1,5 @@
+/*================General Section================*/
+
 * {
   margin: 0;
   padding: 0;
@@ -26,29 +28,7 @@ body{
   color: #111;
 }
 
-/*================FILTER SECTION================*/
-.filters{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
-  grid-template-rows: .5fr;
-}
-
-.filter > h4{
-  font-family: 'lato', sans-serif;
-  font-weight: 400;
-  text-align: center;
-  color: rgb(234,234,234);
-}
-
-.filter {
-  padding: 0 1em 0 1em;
-}
-
-.filter-selected{
-  border-bottom: .2em solid rgb(248,248,248);
-}
-
-/*================HEADER SECTION================*/
+/*================Header Section================*/
 header{
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
@@ -79,15 +59,43 @@ header{
 
 /*===============================================*/
 
-/*================HISTORY SECTION================*/
+/*================Filter Section================*/
+.filters{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-rows: .5fr;
+}
+
+.filters > a{
+  text-decoration: none;
+}
+
+.filter > h4{
+  font-family: 'lato', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  color: rgb(234,234,234);
+}
+
+.filter {
+  padding: 0 1em 0 1em;
+}
+
+.filter-selected{
+  border-bottom: .2em solid rgb(248,248,248);
+}
+
+/*===============================================*/
+
+/*================History Section================*/
 .history{
   display: grid;
   grid-template-columns: 1fr 1fr 3fr;
   grid-template-rows: repeat(6, 2fr);
 }
 
-.post-date, .post-img, .post-info {
-  padding: .5em 0 .5em 0;
+.post-date, .post-img {
+  padding: 1em 0 .5em 0;
 }
 
 .post-date, .post-img, .post-info{
@@ -111,7 +119,7 @@ header{
 
 .post-info {
   text-align: left;
-  padding-left: .6em;
+  padding: .5em 0 1.1em 0;
 }
 
 .post-info > h3 , .post-info > h4 , .post-info > h5{
