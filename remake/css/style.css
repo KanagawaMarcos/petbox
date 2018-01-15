@@ -10,7 +10,6 @@ body{
   background-size: 24%;
 }
 
-
 .text-red{
   color: #CC153A;
 }
@@ -19,8 +18,34 @@ body{
   color: #00B5FB;
 }
 
+.text-blue {
+  color: #050B3D;
+}
+
 .text-black{
   color: #111;
+}
+
+/*================FILTER SECTION================*/
+.filters{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-rows: .5fr;
+}
+
+.filter > h4{
+  font-family: 'lato', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  color: rgb(234,234,234);
+}
+
+.filter {
+  padding: 0 1em 0 1em;
+}
+
+.filter-selected{
+  border-bottom: .2em solid rgb(248,248,248);
 }
 
 /*================HEADER SECTION================*/
@@ -31,7 +56,6 @@ header{
 }
 
 .navbar, .balance-text, .blue, .balance-value{
-  /*blue color*/
   background-color: #050B3D;
 }
 
@@ -52,6 +76,7 @@ header{
 .balance-value > h2 {
   font-weight: 300;
 }
+
 /*===============================================*/
 
 /*================HISTORY SECTION================*/
